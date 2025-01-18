@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WolfiesCinema</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>WOLFFLIX</h1>
+        <div class="search-container">
+            <input type="text" id="search-input" placeholder="Search for a movie or TV show...">
+            <button id="search-button">Search</button>
+        </div>
+
+        <div id="search-results" class="search-results"></div>
+        </div>
+        <!-- Watch Ad Free Button -->
+        <button id="watch-ad-free-button" class="watch-ad-free-btn">Watch Ad Free</button>
+
+        <!-- Ad Free Message -->
+        <div id="ad-free-message" style="display: none;">
+            <p>Download an <a href="https://brave.com/download/" target="_blank">Ad-Blocker Browser Extension</a> or (Best Recommendation) <a href="https://brave.com/download/" target="_blank">Download The Brave Browser</a> for an ad-free experience.</p>
+        </div>
+
+        <!-- Home Button Container -->
+        <div id="home-button-container"></div>
+    </header>
+    
+    <main>
+        <div id="movies"></div>
+        <!-- Arrows for scrolling search results -->
+        <button class="arrow arrow-left" style="display:none;">&#10094;</button>
+        <button class="arrow arrow-right" style="display:none;">&#10095;</button>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 WOLFFLIX. We do not store any media on our servers.</p>
+    </footer>
+
+    <!-- Pop-up Container -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2 id="popup-title"></h2>
+            <div id="seasons"></div>
+        </div>
+    </div>
+
+    <!-- Episode Modal Container -->
+    <div id="episode-modal" class="episode-modal">
+        <div class="modal-content">
+            <span id="episode-close-button" class="close-btn">&times;</span>
+            <div id="episode-list"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

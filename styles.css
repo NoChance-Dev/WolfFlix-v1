@@ -1,0 +1,269 @@
+/* Global Styles */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #2e003e; /* Dark purple background */
+  color: white; /* White text for contrast */
+}
+
+header {
+  background-color: #3f007d; /* Dark purple */
+  color: white;
+  padding: 1rem 0;
+  text-align: center;
+}
+
+main {
+  padding: 1rem;
+}
+
+.category {
+  margin-bottom: 1rem;
+  position: relative;
+}
+
+.category h2 {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #d1a7e1; /* Light purple for category headings */
+}
+
+.movies {
+  display: flex;
+  overflow-x: auto;
+  gap: 0.5rem;
+  scroll-behavior: smooth;
+  white-space: nowrap;
+  pointer-events: auto;
+}
+
+.movies::-webkit-scrollbar {
+  display: none;
+}
+.movies {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.movie img {
+  width: 100px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.arrow-left {
+  left: 0;
+}
+
+.arrow-right {
+  right: 0;
+}
+
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  z-index: 2;
+}
+
+.popup-content {
+  background-color: white;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 600px;
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 25px;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+#search-input {
+  background-color: #9b59b6;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  width: 250px;
+  font-size: 16px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+#search-input:focus {
+  background-color: #8e44ad;
+}
+
+#search-button {
+  background-color: #9b59b6;
+  color: white;
+  border: none;
+  border-radius: 25px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+#search-button:hover {
+  background-color: #8e44ad;
+}
+
+#search-results {
+  display: none; /* Initially hidden */
+  margin-top: 2rem;
+}
+
+.search-results-container {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  overflow-x: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.search-result {
+  width: 60px; /* Further reduced poster size */
+  text-align: center;
+}
+
+.search-result img {
+  width: 100%;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.search-result p {
+  margin-top: 5px;
+  font-size: 0.8rem;
+  color: #d1a7e1;
+}
+
+/* Arrows for navigation */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: rgba(0, 0, 0, 0.5);
+  border: none;
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+  z-index: 1;
+}
+
+.arrow-left {
+  left: 0;
+}
+
+.arrow-right {
+  right: 0;
+}
+
+#watch-ad-free-button {
+  background-color: #9b4dca;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  text-align: center;
+  margin: 10px;
+  transition: background-color 0.3s ease;
+  display: inline-block;
+  text-decoration: none;
+}
+
+#watch-ad-free-button:hover {
+  background-color: #6b1d9d;
+}
+
+.episode-window {
+  display: block;
+  position: absolute;
+  z-index: 2;
+  background-color: #3f007d;
+  color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.seasons,
+.episodes {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.seasons button {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.seasons button:hover {
+  background-color: #8e44ad;
+}
+
+.episodes .episode {
+  padding: 12px;
+  background-color: black;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.episodes .episode:hover {
+  background-color: #8e44ad;
+}
+
+.episode-window .close-btn {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  font-size: 30px;
+  color: white;
+  cursor: pointer;
+}
+
+.episode-window .close-btn:hover {
+  color: #d1a7e1;
+}
