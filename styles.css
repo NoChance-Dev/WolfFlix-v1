@@ -1,182 +1,131 @@
-/* Global Styles */
+/* Global styles for theme */
 body {
   font-family: Arial, sans-serif;
+  background-color: #1a1a1a; /* Dark background color */
+  color: white; /* White text color */
   margin: 0;
   padding: 0;
-  background-color: #2e003e; /* Dark purple background */
-  color: white; /* White text for contrast */
+  transition: background-color 0.3s ease;
 }
 
 header {
-  background-color: #3f007d; /* Dark purple */
-  color: white;
-  padding: 1rem 0;
-  text-align: center;
-}
-
-main {
-  padding: 1rem;
-}
-
-.category {
-  margin-bottom: 1rem;
-  position: relative;
-}
-
-.category h2 {
-  font-size: 1.2rem;
-  margin-bottom: 0.5rem;
-  color: #d1a7e1; /* Light purple for category headings */
-}
-
-.movies {
-  display: flex;
-  overflow-x: auto;
-  gap: 0.5rem;
-  scroll-behavior: smooth;
-  white-space: nowrap;
-  pointer-events: auto;
-}
-
-.movies::-webkit-scrollbar {
-  display: none;
-}
-.movies {
-  -ms-overflow-style: none;
-  scrollbar-width: none;
-}
-
-.movie img {
-  width: 100px;
-  border-radius: 8px;
-  cursor: pointer;
-}
-
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background-color: rgba(0, 0, 0, 0.5);
-  border: none;
+  background-color: #2e2e2e; /* Dark background for header */
   color: white;
   padding: 10px;
-  cursor: pointer;
-  z-index: 1;
-}
-
-.arrow-left {
-  left: 0;
-}
-
-.arrow-right {
-  right: 0;
-}
-
-.popup {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 2;
-}
-
-.popup-content {
-  background-color: white;
-  margin: 15% auto;
-  padding: 20px;
-  border-radius: 8px;
-  width: 80%;
-  max-width: 600px;
   text-align: center;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-.close {
-  position: absolute;
-  top: 10px;
-  right: 25px;
-  font-size: 30px;
-  cursor: pointer;
+h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #8e44ad; /* Light purple color */
 }
 
+/* Search container styling */
 .search-container {
   display: flex;
   justify-content: center;
-  align-items: center;
-  margin: 1rem 0;
+  gap: 10px;
+  margin-top: 10px;
 }
 
 #search-input {
-  background-color: #9b59b6;
-  color: white;
-  border: none;
-  border-radius: 25px;
-  padding: 10px 20px;
-  width: 250px;
-  font-size: 16px;
-  outline: none;
-  transition: all 0.3s ease;
-}
-
-#search-input:focus {
-  background-color: #8e44ad;
+  padding: 5px;
+  width: 200px;
+  background-color: #333; /* Dark input field */
+  color: white; /* White text in input */
+  border: 1px solid #555;
 }
 
 #search-button {
-  background-color: #9b59b6;
+  padding: 5px;
+  background-color: #8e44ad; /* Light purple button */
   color: white;
   border: none;
-  border-radius: 25px;
-  padding: 10px 20px;
-  font-size: 16px;
   cursor: pointer;
-  transition: all 0.3s ease;
+  transition: background-color 0.2s;
 }
 
 #search-button:hover {
+  background-color: #6c3483; /* Darker purple on hover */
+}
+
+/* Buttons with purple hover/click effect */
+button {
+  padding: 10px 15px;
   background-color: #8e44ad;
+  color: white;
+  border: 1px solid #8e44ad;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
+}
+
+button:hover {
+  background-color: #6c3483; /* Darker purple on hover */
+}
+
+button:active {
+  transform: scale(0.98); /* Button click effect */
+}
+
+/* Search results styling */
+#search-results {
+  margin-top: 10px;
+  display: none;
+  overflow: hidden; /* Hide scrollbar */
+  padding: 10px;
+  background-color: #2e2e2e; /* Dark background for results */
+  border: 1px solid #444;
+  border-radius: 8px;
+  position: relative; /* To position the arrow buttons */
+}
+
+#search-results::-webkit-scrollbar {
+  display: none; /* Hide scrollbar in Webkit-based browsers */
 }
 
 #search-results {
-  display: none; /* Initially hidden */
-  margin-top: 2rem;
+  -ms-overflow-style: none;  /* Remove scrollbar in IE */
+  scrollbar-width: none;  /* Remove scrollbar in Firefox */
 }
 
-.search-results-container {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  overflow-x: hidden;
-  position: relative;
-  width: 100%;
-}
-
-.search-result {
-  width: 60px; /* Further reduced poster size */
+/* Movie posters styling */
+.movie {
+  display: inline-block;
   text-align: center;
-}
-
-.search-result img {
-  width: 100%;
-  border-radius: 8px;
+  width: 130px; /* Slightly smaller posters */
+  margin-right: 10px;
   cursor: pointer;
 }
 
-.search-result p {
-  margin-top: 5px;
-  font-size: 0.8rem;
-  color: #d1a7e1;
+.movie img {
+  width: 100%;
+  border-radius: 8px;
+  height: auto;
 }
 
-/* Arrows for navigation */
+/* Scrollable container for categories */
+.scroll-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  overflow: hidden; /* Hide scrollbars */
+}
+
+.scroll-btn {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  padding: 10px;
+  cursor: pointer;
+}
+
 .arrow {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   background-color: rgba(0, 0, 0, 0.5);
-  border: none;
   color: white;
   padding: 10px;
   cursor: pointer;
@@ -191,79 +140,76 @@ main {
   right: 0;
 }
 
-#watch-ad-free-button {
-  background-color: #9b4dca;
-  color: white;
-  padding: 8px 16px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  font-size: 14px;
-  text-align: center;
-  margin: 10px;
-  transition: background-color 0.3s ease;
-  display: inline-block;
-  text-decoration: none;
+.movies {
+  display: flex;
+  gap: 10px;
+  overflow-x: auto;
+  padding: 10px 0;
+  scroll-behavior: smooth; /* Smooth scrolling */
+  -ms-overflow-style: none;  /* Remove scrollbar in IE */
+  scrollbar-width: none;  /* Remove scrollbar in Firefox */
 }
 
-#watch-ad-free-button:hover {
-  background-color: #6b1d9d;
+/* Category posters larger */
+.movie img {
+  width: 130px;  /* Slightly smaller images for categories */
+  height: auto;
 }
 
-.episode-window {
-  display: block;
-  position: absolute;
-  z-index: 2;
-  background-color: #3f007d;
-  color: white;
-  border-radius: 10px;
-  padding: 15px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-}
-
-.seasons,
-.episodes {
+/* Season/Episode selector and buttons */
+.season-episode-container {
   display: flex;
   flex-direction: column;
   gap: 10px;
+  margin-top: 20px;
+  background-color: #000; /* Black background for the container */
+  border: 2px solid #000; /* Black border */
+  padding: 20px;
+  border-radius: 10px;
 }
 
-.seasons button {
+.season-episode-btn {
+  background-color: #000; /* Black button */
+  color: white;
   padding: 10px;
-  background-color: black;
-  color: white;
-  border: none;
+  text-align: center;
+  border: 1px solid #8e44ad; /* Light purple border */
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s ease;
   border-radius: 8px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
-.seasons button:hover {
-  background-color: #8e44ad;
+.season-episode-btn:hover {
+  background-color: #6c3483; /* Darker purple on hover */
 }
 
-.episodes .episode {
-  padding: 12px;
-  background-color: black;
-  border-radius: 8px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.season-episode-btn:active {
+  transform: scale(0.98); /* Button click effect */
 }
 
-.episodes .episode:hover {
-  background-color: #8e44ad;
+.season-episode-selector {
+  display: flex;
+  gap: 10px;
+  margin-top: 10px;
 }
 
-.episode-window .close-btn {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  font-size: 30px;
+.season-episode-selector .episode-btn {
+  background-color: #000; /* Black background for episode buttons */
   color: white;
+  padding: 8px 12px;
+  border: 1px solid #444; /* Dark border */
   cursor: pointer;
+  transition: background-color 0.3s;
+  border-radius: 8px;
 }
 
-.episode-window .close-btn:hover {
-  color: #d1a7e1;
+.season-episode-selector .episode-btn:hover {
+  background-color: #333; /* Slightly lighter on hover */
+}
+
+footer {
+  background-color: #2e2e2e;
+  color: white;
+  padding: 10px;
+  text-align: center;
 }
