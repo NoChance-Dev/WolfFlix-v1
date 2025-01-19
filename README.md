@@ -2,7 +2,7 @@
 Host Your Very Own Movie Threater!
 
 Screenshots
-https://imgur.com/kWWui3k
-https://imgur.com/1mMD2or
+https://imgur.com/tWsYhBR
+https://imgur.com/7TXj8KZ
 
-Demo Site: https://lighthearted-sunshine-c807f1.netlify.app/
+Demo Site: https://wolfflix.xyz/
