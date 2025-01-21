@@ -73,12 +73,14 @@ button:active {
 #search-results {
   margin-top: 10px;
   display: none;
-  overflow: hidden; /* Hide scrollbar */
+  overflow-x: auto; /* Allow horizontal scrolling */
+  white-space: nowrap; /* Prevent wrapping of results */
   padding: 10px;
   background-color: #2e2e2e; /* Dark background for results */
   border: 1px solid #444;
   border-radius: 8px;
   position: relative; /* To position the arrow buttons */
+  scroll-behavior: smooth; /* Smooth scrolling */
 }
 
 #search-results::-webkit-scrollbar {
@@ -150,61 +152,94 @@ button:active {
   scrollbar-width: none;  /* Remove scrollbar in Firefox */
 }
 
-/* Category posters larger */
-.movie img {
-  width: 130px;  /* Slightly smaller images for categories */
-  height: auto;
+/* Responsive fix for mobile search results */
+@media (max-width: 1024px) {
+  #search-input {
+    width: 150px;
+  }
+
+  .search-container {
+    flex-direction: column;
+  }
+
+  #search-button {
+    width: 100%;
+    margin-top: 5px;
+  }
 }
 
-/* Season/Episode selector and buttons */
-.season-episode-container {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  margin-top: 20px;
-  background-color: #000; /* Black background for the container */
-  border: 2px solid #000; /* Black border */
-  padding: 20px;
-  border-radius: 10px;
+/* Mobile Styles for Phones and Smaller Devices */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 1.5rem; /* Smaller heading */
+  }
+
+  .search-container {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  #search-input {
+    width: 100%; /* Full width input on smaller screens */
+  }
+
+  #search-button {
+    width: 100%; /* Full width button on smaller screens */
+  }
+
+  /* Make movie posters smaller on mobile */
+  .movie {
+    width: 100px; /* Smaller movie posters */
+    margin-right: 5px;
+  }
+
+  /* Adjust layout for the scrollable movies */
+  .movies {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  
+  /* Adjust for the scroll buttons */
+  .scroll-btn {
+    display: none; /* Hide scroll buttons on smaller screens */
+  }
+
+  .arrow {
+    display: none; /* Hide arrows */
+  }
+  
+  .scroll-container {
+    flex-direction: column;
+  }
+
+  /* Adjust the season-episode container */
+  .season-episode-container {
+    padding: 15px;
+    margin-top: 10px;
+  }
 }
 
-.season-episode-btn {
-  background-color: #000; /* Black button */
-  color: white;
-  padding: 10px;
-  text-align: center;
-  border: 1px solid #8e44ad; /* Light purple border */
-  cursor: pointer;
-  transition: background-color 0.3s, transform 0.2s ease;
-  border-radius: 8px;
-}
+/* Additional small-screen adjustments */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.2rem; /* Even smaller heading */
+  }
 
-.season-episode-btn:hover {
-  background-color: #6c3483; /* Darker purple on hover */
-}
+  .season-episode-container {
+    padding: 10px;
+  }
 
-.season-episode-btn:active {
-  transform: scale(0.98); /* Button click effect */
-}
+  .season-episode-btn {
+    padding: 8px;
+  }
 
-.season-episode-selector {
-  display: flex;
-  gap: 10px;
-  margin-top: 10px;
-}
+  .season-episode-selector .episode-btn {
+    padding: 6px 10px;
+  }
 
-.season-episode-selector .episode-btn {
-  background-color: #000; /* Black background for episode buttons */
-  color: white;
-  padding: 8px 12px;
-  border: 1px solid #444; /* Dark border */
-  cursor: pointer;
-  transition: background-color 0.3s;
-  border-radius: 8px;
-}
-
-.season-episode-selector .episode-btn:hover {
-  background-color: #333; /* Slightly lighter on hover */
+  footer {
+    font-size: 0.8rem;
+  }
 }
 
 footer {
